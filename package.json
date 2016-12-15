@@ -1,0 +1,26 @@
+{
+  "name": "motif",
+  "version": "3.6.1",
+  "description": "Motif: a responsive front-end framework that supports you",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MotifFramework/Motif.git"
+  },
+  "author": "Lifeblue",
+  "license": "MIT Open Source",
+  "gitHead": "cce044bb9b91bffe6cddd736bc925a22b58fbcd8",
+  "dependencies": {
+    "grunt": "~0.4.x",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-less": "~1.0.x",
+    "grunt-contrib-uglify": "~0.9.x",
+    "grunt-contrib-watch": "~0.6.x",
+    "grunt-svgmin": "^3.1.2",
+    "grunt-svgstore": "^1.0.0",
+    "load-grunt-config": "^0.19.1"
+  }
+}
