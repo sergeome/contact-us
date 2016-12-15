@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motif Learning Web Site</title>
     <link rel="stylesheet" href="build/css/motif.css">
+    <script>
+
+        function initMap() {
+            var myLatLng = {lat: 32.773095, lng: -96.790237};
+
+            var map = new google.maps.Map(document.getElementById('google-map'), {
+                zoom: 8,
+                center: myLatLng
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBg51aZ0IIgsdXSw35gOOGsqFhIOjoRnw&callback=initMap"
+            async defer></script>
     <script src="build/js/motif.js"></script>
 </head>
 <body>
@@ -12,7 +32,7 @@
     <div class="wrapper">
         <div class="gs-row gm-row gl-row">
             <header class="gcs-full gcm-full gcl-full">
-                <div class="site-title">Tempees.com</div>
+                <div class="site-title">Simple Web Page</div>
                 <div class="support">
                     <div class="support__description">Do you have a question?</div>
                     <a class="btn support__cta">Contact us</a>
@@ -34,12 +54,16 @@
     </div>
 </nav>
 <section class="main-content">
-    <div class="google-maps"></div>
+    <div class="google-maps" id="google-map">
+
+    </div>
     <div class="contact-us"></div>
 </section>
 <footer class="footer">
-    <div class="copyright">Tempees.com / All right reserved</div>
-    <div class="extra-info">Cool free templates</div>
+    <div class="wrapper group">
+        <div class="copyright">Simple Web Page/ All right reserved</div>
+        <div class="extra-info">Cool free templates</div>
+    </div>
 </footer>
 </body>
 </html>
