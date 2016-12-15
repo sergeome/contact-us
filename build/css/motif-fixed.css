@@ -3495,6 +3495,31 @@ strong {
 a {
   text-decoration: none;
 }
+.input-label {
+  color: #595959;
+}
+.input-label input,
+.input-label textarea,
+.input-label select {
+  -webkit-border-radius: 0.1875rem;
+  -moz-border-radius: 0.1875rem;
+  -o-border-radius: 0.1875rem;
+  border-radius: 0.1875rem;
+  outline: none;
+  border: 1px solid #dddddd;
+  padding: 10px 18px;
+}
+.input-label input:hover,
+.input-label textarea:hover,
+.input-label select:hover,
+.input-label input:active,
+.input-label textarea:active,
+.input-label select:active,
+.input-label input:focus,
+.input-label textarea:focus,
+.input-label select:focus {
+  border-color: #837f81;
+}
 .header-wrapper {
   background: #2c3e50;
   height: 54px;
@@ -3582,6 +3607,47 @@ a {
 }
 .google-maps {
   height: 340px;
+}
+.contact-us {
+  padding: 45px 0 0 0;
+  height: 574px;
+}
+.contact-title {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 35px;
+  font-weight: 800;
+}
+.contact-description {
+  text-align: center;
+  color: #7f7f7f;
+  font-weight: 200;
+  font-size: 20px;
+}
+.submit_form {
+  background: #2980b9;
+  color: #ffffff;
+  font-weight: 600;
+  float: left;
+  -webkit-border-radius: 0.1875rem;
+  -moz-border-radius: 0.1875rem;
+  -o-border-radius: 0.1875rem;
+  border-radius: 0.1875rem;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+.submit_form:hover,
+.submit_form:focus,
+.submit_form:active {
+  background: #55a5d9;
+  color: #ffffff;
+}
+.send-info {
+  float: left;
+  margin-top: 28px;
+  margin-left: 15px;
+  color: #7f7f7f;
+  font-weight: 200;
 }
 .footer {
   background: #2c3e50;

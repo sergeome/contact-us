@@ -54,6 +54,22 @@ a {
   text-decoration: none;
 }
 
+//Common overriding
+.input-label {
+  color: @dark-gray;
+  input,
+  textarea,
+  select {
+    .border-radius(@default-radius);
+    outline: none;
+    border: 1px solid #dddddd;
+    padding: 10px 18px;
+    &:hover, &:active, &:focus {
+      border-color: #837f81;
+    }
+  }
+}
+
 //Page styles
 .header-wrapper {
   background: @dark-blue;
@@ -109,7 +125,7 @@ a {
       padding: 10px 35px;
       font-weight: 200;
       .border-radius(@default-radius);
-      &:hover, &:focus, &:active{
+      &:hover, &:focus, &:active {
         background: @light-blue;
       }
     }
@@ -125,24 +141,69 @@ a {
   color: @white;
   padding-left: 44px;
   padding-right: 44px;
-  &:hover, &:focus, &:active{
+  &:hover, &:focus, &:active {
     background: lighten(@cta-blue, 15%);
     color: @white;
   }
 }
-.google-maps{
+
+.google-maps {
   height: 340px;
 }
-.footer{
+
+.contact-us {
+  padding: 45px 0 0 0;
+  height: 574px;
+}
+
+.contact-title {
+  text-align: center;
+  color: @dark-blue;
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.contact-description {
+  text-align: center;
+  color: @gray;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.submit_form {
+  background: @cta-blue;
+  color: @white;
+  font-weight: 600;
+  float: left;
+  .border-radius(@default-radius);
+  padding-left: 36px;
+  padding-right: 36px;
+  &:hover, &:focus, &:active {
+    background: lighten(@cta-blue, 15%);
+    color: @white;
+  }
+}
+
+.send-info {
+  float: left;
+  margin-top: 28px;
+  margin-left: 15px;
+  color: @gray;
+  font-weight: 200;
+}
+
+.footer {
   background: @dark-blue;
   height: 50px;
   padding: 13px 0 0 0;
 }
-.copyright{
+
+.copyright {
   color: @light-blue;
   float: left;
 }
-.extra-info{
+
+.extra-info {
   color: @light-blue;
   float: right;
 }
