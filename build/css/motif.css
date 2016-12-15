@@ -744,12 +744,10 @@ items, making the link `inline-block`. The idea is to give the skeleton of a
 horizontal list/navigation without adding too much style (yet).
 
 */
-[class*="list--x"] li,
-.tabs nav > ul li {
+[class*="list--x"] li {
   display: inline;
 }
-[class*="list--x"] a,
-.tabs nav > ul a {
+[class*="list--x"] a {
   display: inline-block;
 }
 /*
@@ -1337,9 +1335,7 @@ A basic stripping of list styles.
 
 */
 .list--unstyled,
-[class*="list--x"],
-ul.nav--vert,
-.tabs nav > ul {
+[class*="list--x"] {
   padding-left: 0;
   list-style: none outside none;
 }
@@ -1449,9 +1445,7 @@ body,
 .body-text,
 .input-hint,
 .input-desc,
-[class*="input-alert"],
-input,
-textarea {
+[class*="input-alert"] {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.07142857;
@@ -1461,9 +1455,7 @@ textarea {
 Petite Text
 
 */
-[class*="petite-text"],
-.figure figcaption,
-.figcaption {
+[class*="petite-text"] {
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1.25;
@@ -1490,9 +1482,7 @@ body,
 .body-text,
 .input-hint,
 .input-desc,
-[class*="input-alert"],
-input,
-textarea {
+[class*="input-alert"] {
   line-height: 1.5;
 }
 /*
@@ -1606,7 +1596,7 @@ file. Hover, focus, and current states are accounted for.
 a,
 .link,
 .list--x--pgs a[href] {
-  color: #1f75ae;
+  color: #34495e;
 }
 a:hover,
 .link:hover,
@@ -1617,7 +1607,7 @@ a.is-current,
 .list--x--pgs a[href]:hover,
 .list--x--pgs a[href]:focus,
 .list--x--pgs a[href].is-current {
-  color: #13496d;
+  color: #2c3e50;
 }
 /*
 
@@ -1945,7 +1935,7 @@ alter the child elements to convey states of success and error.
 .is-successful input,
 .is-successful textarea,
 .is-successful select {
-  border-color: #72bc44;
+  border-color: #2ecc71;
 }
 .is-erroneous input,
 .is-erroneous textarea,
@@ -1971,7 +1961,7 @@ Within labels, there are input alerts that apply to individual fields.
   /* Display & Box Model */
   display: inline-block;
   /* Pretty */
-  color: #13496d;
+  color: #2c3e50;
 }
 .input-alert--warning {
   color: #ec8e04;
@@ -1980,7 +1970,7 @@ Within labels, there are input alerts that apply to individual fields.
   color: #e63c4d;
 }
 .input-alert--success {
-  color: #72bc44;
+  color: #2ecc71;
 }
 /*
 
@@ -3400,13 +3390,13 @@ or preventative.
   color: #ffffff;
 }
 .alert-panel {
-  background: #13496d;
+  background: #2c3e50;
 }
 .alert-panel--error {
   background: #e63c4d;
 }
 .alert-panel--success {
-  background: #72bc44;
+  background: #2ecc71;
 }
 /*
 
@@ -3432,14 +3422,112 @@ hardcode some of those styles
 .wysiwyg h6 {
   margin-top: 1.5em;
 }
+.lato-light,
+.lato-regular,
+.lato-bold,
+.lato-black,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.primary-heading,
+.secondary-heading,
+.tertiary-heading,
+body,
+a,
+button,
+.body-text,
+.input-hint,
+.input-desc,
+[class*="input-alert"] {
+  font-family: "Lato", Helvetica, Arial, "Arial Unicode", "Lucida Sans Unicode", sans-serif;
+}
+.lato-light,
+.secondary-heading {
+  font-weight: 300;
+}
+.lato-regular,
+body,
+a,
+button,
+.body-text,
+.input-hint,
+.input-desc,
+[class*="input-alert"] {
+  font-weight: 400;
+}
+.lato-bold,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.primary-heading {
+  font-weight: 700;
+}
+.lato-black,
+.tertiary-heading {
+  font-weight: 900;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.primary-heading,
+.secondary-heading {
+  color: #34495e;
+}
+.tertiary-heading {
+  color: #a9a6a7;
+  text-transform: uppercase;
+}
+dt,
+th,
+.input-label,
+strong {
+  font-weight: 700;
+}
 .header-wrapper {
   background: #2c3e50;
+  height: 54px;
 }
 .site-title {
   float: left;
+  color: #57718a;
+  margin: 15px 0 0 0;
 }
 .support {
   float: right;
+  margin: 12px 0 0 0;
+}
+.support__description {
+  float: left;
+  color: #57718a;
+  margin: 3px 0 0 0;
+}
+.support__cta {
+  background: #2ecc71;
+  color: #ffffff;
+  border: none;
+  float: right;
+  margin: 0 0 0 15px;
+  padding: 6px 20px;
+  font-weight: bold;
+  -webkit-border-radius: 0.1875rem;
+  -moz-border-radius: 0.1875rem;
+  -o-border-radius: 0.1875rem;
+  border-radius: 0.1875rem;
+}
+.support__cta:hover,
+.support__cta:active,
+.support__cta:focus {
+  background: #69dd9a;
+  color: #ffffff;
 }
 /**
  * Responsive Breakpoints
@@ -3588,796 +3676,4 @@ hardcode some of those styles
  * Prototype Styles
  * REMOVE WHEN BEGINNING PRODUCTION
  */
-/*
-
-Config
-
-*/
-/*
-
-Font Faces
-
-*/
-/* 
-
-Applied Font Faces
-
-These classes based on every typeface used on the project, including many which were 
-embedded via `@font-face` declarations.
-
-*/
-.lato-light,
-.lato-regular,
-.lato-bold,
-.lato-black,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.primary-heading,
-.secondary-heading,
-.tertiary-heading,
-body,
-.body-text,
-a,
-.link,
-[class*="btn"],
-.tabs nav > ul a,
-.tabs__list--x a,
-.tabs__list--x--forceful a,
-.list--x--pgs a[href],
-.input-hint,
-.input-desc,
-[class*="input-alert"],
-input,
-textarea {
-  font-family: "Lato", Helvetica, Arial, "Arial Unicode", "Lucida Sans Unicode", sans-serif;
-}
-.lato-light,
-.secondary-heading {
-  font-weight: 300;
-}
-.lato-regular,
-body,
-.body-text,
-.input-hint,
-.input-desc,
-[class*="input-alert"],
-input,
-textarea {
-  font-weight: 400;
-}
-.lato-bold,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.primary-heading,
-a,
-.link,
-[class*="btn"],
-.tabs nav > ul a,
-.tabs__list--x a,
-.tabs__list--x--forceful a,
-.list--x--pgs a[href] {
-  font-weight: 700;
-}
-.lato-black,
-.tertiary-heading {
-  font-weight: 900;
-}
-/*
-
-Type Styles
-
-*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.primary-heading,
-.secondary-heading {
-  color: #1f75ae;
-}
-.tertiary-heading {
-  color: #a9a6a7;
-  text-transform: uppercase;
-}
-/*
-
-Body Text
-
-A quick class to help make any element's text look like the site's default body text.
-
-*/
-dt,
-th,
-.input-label,
-strong {
-  font-weight: 700;
-}
-/*
-
-Blockquote
-
-*/
-.blockquote {
-  padding-left: 1.125rem;
-  font-size: 128%;
-  color: #a9a6a7;
-  border-left: 7px solid #dddddd;
-}
-/*
-
-Forms
-
-*/
-input,
-textarea {
-  padding: 0.625rem 1.125rem;
-  background: #ffffff;
-  border: 1px solid #dddddd;
-  line-height: normal;
-  -webkit-border-radius: 0.1875rem;
-  -moz-border-radius: 0.1875rem;
-  -o-border-radius: 0.1875rem;
-  border-radius: 0.1875rem;
-  -webkit-box-shadow: inset 0 0.1875rem 0.1875rem rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 0.1875rem 0.1875rem rgba(0, 0, 0, 0.05);
-  -o-box-shadow: inset 0 0.1875rem 0.1875rem rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 0.1875rem 0.1875rem rgba(0, 0, 0, 0.05);
-}
-input:hover,
-textarea:hover,
-input:focus,
-textarea:focus,
-input:active,
-textarea:active,
-input.is-current,
-textarea.is-current {
-  border-color: #837f81;
-}
-textarea {
-  /* Display & Box Model */
-  min-height: 9.1875rem;
-}
-/*
-
-Buttons
-
-*/
-[class*="btn"] {
-  -webkit-border-radius: 0.1875rem;
-  -moz-border-radius: 0.1875rem;
-  -o-border-radius: 0.1875rem;
-  border-radius: 0.1875rem;
-  background-color: #f7f7f9;
-  border: 1px solid #cfcbca;
-}
-[class*="btn"],
-[class*="btn"]:hover,
-[class*="btn"]:focus,
-[class*="btn"].is-current {
-  color: #262626;
-}
-[class*="btn"]:hover,
-[class*="btn"]:focus,
-[class*="btn"].is-current {
-  background-color: #e8e8ee;
-  border-color: #a9a6a7;
-}
-.btn--blue,
-.btn--primary {
-  background-color: #1f75ae;
-  border-color: #13496d;
-}
-.btn--blue,
-.btn--primary,
-.btn--blue:hover,
-.btn--primary:hover,
-.btn--blue:focus,
-.btn--primary:focus,
-.btn--blue.is-current,
-.btn--primary.is-current {
-  color: #ffffff;
-}
-.btn--blue:hover,
-.btn--primary:hover,
-.btn--blue:focus,
-.btn--primary:focus,
-.btn--blue.is-current,
-.btn--primary.is-current {
-  background-color: #13496d;
-  border-color: #081e2c;
-}
-.btn--red,
-.btn--danger {
-  background-color: #e63c4d;
-  border-color: #bd1829;
-}
-.btn--red,
-.btn--danger,
-.btn--red:hover,
-.btn--danger:hover,
-.btn--red:focus,
-.btn--danger:focus,
-.btn--red.is-current,
-.btn--danger.is-current {
-  color: #ffffff;
-}
-.btn--red:hover,
-.btn--danger:hover,
-.btn--red:focus,
-.btn--danger:focus,
-.btn--red.is-current,
-.btn--danger.is-current {
-  background-color: #bd1829;
-  border-color: #79101a;
-}
-/*
-
-Panels
-
-````panels-alt
-<div class="panel--alt">
-    <h3>This is a Panel</h3>
-    <p>This is a <a href="#">feedback message</a> for the user.</p>
-    <p><a href="#" class="btn">User Action</a></p>
-</div>
-<div class="panel--alt">
-    <p>This is a feedback panel with no heading.</p>
-</div>
-````
-
-````panels-inverse
-<div class="panel--inverse">
-    <h3>This is a Panel</h3>
-    <p>This is a <a href="#">feedback message</a> for the user.</p>
-    <p><a href="#" class="btn">User Action</a></p>
-</div>
-<div class="panel--inverse">
-    <p>This is a feedback panel with no heading.</p>
-</div>
-````
-
-*/
-.panel,
-[class*="panel-"],
-[class*="-panel"] {
-  -webkit-border-radius: 0.1875rem;
-  -moz-border-radius: 0.1875rem;
-  -o-border-radius: 0.1875rem;
-  border-radius: 0.1875rem;
-  color: #262626;
-  border: 1px solid #cfcbca;
-  background-color: #f7f7f9;
-}
-.panel--alt {
-  background-color: #ffffff;
-}
-.panel--inverse {
-  color: #ffffff;
-  background-color: #1f75ae;
-  border-color: #1f75ae;
-}
-.panel--inverse h1,
-.panel--inverse h2,
-.panel--inverse h3,
-.panel--inverse h4,
-.panel--inverse h5,
-.panel--inverse h6 {
-  color: inherit;
-}
-.panel--inverse a,
-.panel--inverse a:hover,
-.panel--inverse a:focus {
-  color: inherit;
-}
-.panel--inverse a:hover,
-.panel--inverse a:focus {
-  color: #cfcbca;
-}
-.panel--inverse .btn,
-.panel--inverse .btn:hover,
-.panel--inverse .btn:focus {
-  color: #262626;
-}
-.alert-panel--info {
-  border-color: #00a4d8;
-  background-color: #eaf7ff;
-}
-.alert-panel--error {
-  border-color: #e63c4d;
-  background-color: #f6e1df;
-}
-.alert-panel--success {
-  border-color: #72bc44;
-  background-color: #f4faf2;
-}
-/*
-
-Figures
-
-*/
-.figure > a,
-[class*="figure--"] > a {
-  padding: 0.3125rem;
-  border: 1px solid #cfcdcd;
-}
-.figure > a:hover,
-[class*="figure--"] > a:hover,
-.figure > a:focus,
-[class*="figure--"] > a:focus {
-  border-color: #3d9ddc;
-}
-.figure figcaption,
-.figcaption {
-  padding: 0.625rem 1.125rem;
-}
-/*
-
-List Modules
-
-*/
-/*
-
-Nav Bar
-
-A quick navigation bar, typically good for prototyping the main menu of a site.
-
-````nav-bar
-<nav class="nav-bar--menu" role="navigation">
-    <h3 class="nav-bar__title js-expand"
-     id="reveal-main-nav"
-     data-reveal="main-nav-list">
-        <svg class="icon"><use xlink:href="#rows"></svg>
-        <b class="button-label">Main Menu</b>
-    </h3>
-    <ul class="nav-bar__list--x--forceful expand__target" id="main-nav-list">
-        <li>
-            <a class="nav-bar__link is-current" href="#">
-                Current Nav Link
-            </a>
-        </li>
-        <li>
-            <a class="nav-bar__link" href="#">
-                Nav Link
-            </a>
-        </li>
-        <li>
-            <a class="nav-bar__link" href="#">
-                Nav Link
-            </a>
-        </li>
-    </ul>
-</nav>
-````
-
-*/
-.nav-bar__title {
-  margin: 0;
-  padding: 0.625rem 4%;
-  display: inline-block;
-  color: #ffffff;
-  background: #1f75ae;
-  cursor: pointer;
-}
-.nav-bar__title:hover,
-.nav-bar__title:focus,
-.nav-bar__title.is-expanded {
-  background: #024f82;
-}
-.nav-bar__link {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 0.625rem 4%;
-}
-.nav-bar__link:hover,
-.nav-bar__link:focus,
-.nav-bar__link.is-current {
-  color: #ffffff;
-  background: #024f82;
-}
-[class*="nav-bar__list"] {
-  margin: 0;
-  background: #1f75ae;
-}
-[class*="nav-bar__list"] ul {
-  margin: 0;
-}
-@media all and (min-width: 30em) {
-  [class*="nav-bar__list"] > li,
-  [class*="nav-bar__list"] [class*="list--x"] > li,
-  [class*="nav-bar__list"] .tabs nav > ul > li {
-    width: 50%;
-  }
-  [class*="nav-bar__list"] > li:nth-child( odd ),
-  [class*="nav-bar__list"] [class*="list--x"] > li:nth-child( odd ),
-  [class*="nav-bar__list"] .tabs nav > ul > li:nth-child( odd ) {
-    clear: both;
-  }
-  .nav-bar__link {
-    padding: 0.625rem 1.125rem;
-  }
-}
-@media all and (min-width: 48em) {
-  .nav-bar__link {
-    padding: 1.25rem 1.125rem;
-  }
-  .js .nav-bar--menu .nav-bar__title {
-    display: none;
-  }
-  .js .nav-bar--menu [class*="nav-bar__list"] {
-    max-height: 999px;
-  }
-  [class*="nav-bar__list"] {
-    background: #1f75ae;
-  }
-  [class*="nav-bar__list"] > li,
-  [class*="nav-bar__list"] [class*="list--x"] > li,
-  [class*="nav-bar__list"] .tabs nav > ul > li {
-    width: auto;
-  }
-  [class*="nav-bar__list"] > li:nth-child( odd ),
-  [class*="nav-bar__list"] [class*="list--x"] > li:nth-child( odd ),
-  [class*="nav-bar__list"] .tabs nav > ul > li:nth-child( odd ) {
-    clear: none;
-  }
-}
-/*
-
-Vertical Nav
-
-````vertical-nav
-<ul class="nav--vert">
-    <li>
-        <a href="#">Nav Link</a>
-    </li>
-    <li>
-        <a href="#" class="is-current">Current Nav Link</a>
-        <ul>
-            <li>
-                <a href="#">Nav Link</a>
-            </li>
-            <li>
-                <a href="#">Nav Link</a>
-            </li>
-            <li>
-                <a href="#" class="is-current">Current Nav Link</a>
-            </li>
-            <li>
-                <a href="#">Nav Link</a>
-            </li>
-        </ul>
-    </li>
-    <li>
-        <a href="#">Nav Link</a>
-    </li>
-    <li>
-        <a href="#">Nav Link</a>
-    </li>
-    <li>
-        <a href="#">Nav Link</a>
-    </li>
-</ul>
-````
-
-*/
-.nav--vert a {
-  color: #024f82;
-  padding: 0.3125rem 1.125rem;
-  display: block;
-  text-decoration: none;
-}
-.nav--vert a:hover,
-.nav--vert a:focus,
-.nav--vert .is-current {
-  background-color: #eaf7ff;
-}
-.nav--vert li ul {
-  margin: 0;
-  padding: 0 0 0 1.125rem;
-}
-.nav--vert li ul li {
-  list-style: none outside none;
-}
-/*
-
-Breadcrumb
-
-*/
-.breadcrumb__list--x {
-  text-transform: capitalize;
-}
-.breadcrumb li:before {
-  content: "/";
-  margin-right: 0.5625rem;
-}
-.breadcrumb li:first-child:before {
-  content: "";
-  margin: 0;
-}
-/*
-
-Button List
-
-*/
-[class*="button-list--x"] li:not(:first-child) a {
-  -webkit-border-bottom-left-radius: 0;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius-bottomleft: 0;
-  -moz-border-radius-topleft: 0;
-  -o-border-bottom-left-radius: 0;
-  -o-border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-[class*="button-list--x"] li:not(:last-child) a {
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-top-right-radius: 0;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-topright: 0;
-  -o-border-bottom-right-radius: 0;
-  -o-border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-[class*="button-list--x"] a {
-  border-left-width: 0;
-}
-[class*="button-list--x"] li:first-child a {
-  border-left-width: 1px;
-}
-/*
-
-Tabs
-
-*/
-.tabs {
-  margin-top: 1.4285714285714286em;
-}
-.tabs nav > ul,
-.tabs__list--x,
-.tabs__list--x--forceful {
-  border-bottom: 1px solid #dddddd;
-  margin-bottom: 1.25rem;
-}
-.tabs nav > ul a,
-.tabs__list--x a,
-.tabs__list--x--forceful a {
-  /* Extends .lato-bold */
-  -webkit-border-top-right-radius: 0.1875rem;
-  -webkit-border-top-left-radius: 0.1875rem;
-  -moz-border-radius-topright: 0.1875rem;
-  -moz-border-radius-topleft: 0.1875rem;
-  -o-border-top-right-radius: 0.1875rem;
-  -o-border-top-left-radius: 0.1875rem;
-  border-top-right-radius: 0.1875rem;
-  border-top-left-radius: 0.1875rem;
-  padding: 0.625rem 1.125rem;
-  color: #cfcbca;
-  text-decoration: none;
-  position: relative;
-  bottom: -1px;
-  z-index: 30;
-  border: 1px solid transparent;
-}
-.tabs nav > ul a:hover,
-.tabs__list--x a:hover,
-.tabs__list--x--forceful a:hover,
-.tabs nav > ul a:focus,
-.tabs__list--x a:focus,
-.tabs__list--x--forceful a:focus {
-  color: #262626;
-}
-.tabs nav > ul .is-current,
-.tabs__list--x .is-current,
-.tabs__list--x--forceful .is-current {
-  color: #262626;
-  background-color: #ffffff;
-  border-color: #cfcbca;
-  border-bottom-color: transparent;
-  z-index: 60;
-}
-.js.csstransitions .tabs > nav + *,
-.js.csstransitions .tabs__section {
-  -webkit-transition: height 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -moz-transition: height 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: height 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: height 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.tabs > nav + * > * > :first-child,
-.tabs .tab > :first-child {
-  margin-top: 0;
-}
-/*
-
-Tables
-
-*/
-td[data-th]:before {
-  /* Pretty */
-  font-weight: 700;
-}
-@media all and (min-width: 48em) {
-  th {
-    border-bottom: 0.0625rem solid #dddddd;
-  }
-  th + th,
-  td + td {
-    border-left: 0.0625rem solid #dddddd;
-  }
-  tr + tr td {
-    border-top: 0.0625rem solid #dddddd;
-  }
-  tbody tr:nth-child( odd ),
-  table > tr:nth-child( odd ) {
-    background: #f7f7f9;
-  }
-}
-/*
-
-Messaging
-
-*/
-.bubble,
-[class*="input-alert"] {
-  margin: 0;
-  padding: 0.625rem;
-  background-color: #ffffff;
-  position: relative;
-  -webkit-border-radius: 0.1875rem;
-  -moz-border-radius: 0.1875rem;
-  -o-border-radius: 0.1875rem;
-  border-radius: 0.1875rem;
-  -webkit-box-shadow: 0 0 0.4375rem rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 0.4375rem rgba(0, 0, 0, 0.5);
-  -o-box-shadow: 0 0 0.4375rem rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 0.4375rem rgba(0, 0, 0, 0.5);
-  -webkit-transition: opacity 0.15s linear;
-  -moz-transition: opacity 0.15s linear;
-  -o-transition: opacity 0.15s linear;
-  transition: opacity 0.15s linear;
-}
-.bubble:after,
-[class*="input-alert"]:after {
-  position: absolute;
-  border: 0.3125rem solid transparent;
-  content: "";
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-.bubble.left-wisp:after,
-.bubble.right-wisp:after,
-[class*="input-alert"].left-wisp:after,
-[class*="input-alert"].right-wisp:after {
-  top: 50%;
-  margin-top: -0.3125rem;
-}
-.bubble.left-wisp:after,
-[class*="input-alert"].left-wisp:after {
-  left: -0.625rem;
-  border-right-color: #ffffff;
-}
-.bubble.right-wisp:after,
-[class*="input-alert"].right-wisp:after {
-  right: -0.625rem;
-  border-left-color: #ffffff;
-}
-.bubble.top-wisp:after,
-.bubble.bottom-wisp:after,
-[class*="input-alert"].top-wisp:after,
-[class*="input-alert"].bottom-wisp:after {
-  left: 50%;
-  margin-left: -0.3125rem;
-}
-.bubble.top-wisp:after,
-[class*="input-alert"].top-wisp:after {
-  top: -0.625rem;
-  border-bottom-color: #ffffff;
-}
-.bubble.bottom-wisp:after,
-[class*="input-alert"].bottom-wisp:after {
-  bottom: -0.625rem;
-  border-top-color: #ffffff;
-}
-/*
-
-Input Alerts
-
-*/
-[class*="input-alert"] {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
-  padding: 0.3125rem 0.625rem;
-  color: #ffffff;
-}
-[class*="input-alert"]:after {
-  left: 0.625rem;
-  margin-left: 0;
-  top: -0.625rem;
-  border-bottom-color: #ffffff;
-}
-.input-alert--warning {
-  background-color: #ec8e04;
-}
-.input-alert--warning:after {
-  border-bottom-color: #ec8e04;
-}
-.input-alert--info {
-  background-color: #13496d;
-}
-.input-alert--info:after {
-  border-bottom-color: #13496d;
-}
-.input-alert--error {
-  background-color: #e63c4d;
-}
-.input-alert--error:after {
-  border-bottom-color: #e63c4d;
-}
-.input-alert--success {
-  background-color: #72bc44;
-}
-.input-alert--success:after {
-  border-bottom-color: #72bc44;
-}
-.no-boxshadow .bubble,
-.no-boxshadow [class*="input-alert"] {
-  border: 1px solid #a9a6a7;
-}
-/*
-
-Form Modules
-
-*/
-.attached-label {
-  -webkit-border-radius: 0.1875rem;
-  -moz-border-radius: 0.1875rem;
-  -o-border-radius: 0.1875rem;
-  border-radius: 0.1875rem;
-  /* Pretty */
-  border: 1px solid #dddddd;
-}
-.attached-label:hover,
-.attached-label:focus,
-.attached-label:active,
-.attached-label.is-current {
-  border-color: #837f81;
-}
-.attached-label .label {
-  text-align: center;
-  padding: 0 1.125rem;
-  background-color: #f7f7f9;
-  border-left: 1px solid #dddddd;
-  border-right: 1px solid #dddddd;
-}
-.attached-label .label:first-child,
-.attached-label .label + input {
-  border-left: none;
-}
-.attached-label input,
-.attached-label [class*="btn"] {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-  /* Pretty */
-  border: none;
-}
-.attached-label input + .label,
-.attached-label .label:last-child {
-  border-right: none;
-}
 /*# sourceMappingURL=motif.css.map */
