@@ -148,8 +148,7 @@ a {
   height: 340px;
 }
 .contact-us {
-  padding: 45px 0 0 0;
-  height: 574px;
+  padding: 45px 0 51px 0;
 }
 .contact-title {
   text-align: center;
@@ -185,14 +184,21 @@ a {
 }
 .footer {
   background: @dark-blue;
-  height: 50px;
-  padding: 13px 0 0 0;
+  padding: 13px 0 16px 0;
 }
 .copyright {
   color: @light-blue;
-  float: left;
+  text-align: center;
+  margin-bottom: 10px;
+  @media @small-screens-min{
+    float: left;
+    margin-bottom: 0;
+  }
 }
 .extra-info {
   color: @light-blue;
-  float: right;
+  text-align: center;
+  @media @small-screens-min{
+    float: right;
+  }
 }
