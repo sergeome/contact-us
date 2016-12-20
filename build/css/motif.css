@@ -3629,44 +3629,71 @@ a {
   height: 340px;
 }
 .contact-us {
-  padding: 45px 0 51px 0;
+  padding: 20px 0 15px 0;
+}
+@media all and (min-width: 30em) {
+  .contact-us {
+    padding: 45px 0 51px 0;
+  }
 }
 .contact-title {
   text-align: center;
   color: #2c3e50;
-  font-size: 35px;
+  font-size: 28px;
   font-weight: 800;
+}
+@media all and (min-width: 30em) {
+  .contact-title {
+    font-size: 35px;
+  }
 }
 .contact-description {
   text-align: center;
   color: #7f7f7f;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 16px;
 }
-.submit_form {
+@media all and (min-width: 30em) {
+  .contact-description {
+    font-size: 20px;
+  }
+}
+.submit-form {
+  display: block;
+  width: 137px;
+  margin-left: auto;
+  margin-right: auto;
   background: #2980b9;
   color: #ffffff;
   font-weight: 600;
-  float: left;
   -webkit-border-radius: 0.1875rem;
   -moz-border-radius: 0.1875rem;
   -o-border-radius: 0.1875rem;
   border-radius: 0.1875rem;
-  padding-left: 36px;
-  padding-right: 36px;
 }
-.submit_form:hover,
-.submit_form:focus,
-.submit_form:active {
+.submit-form:hover,
+.submit-form:focus,
+.submit-form:active {
   background: #55a5d9;
   color: #ffffff;
 }
+@media all and (min-width: 30em) {
+  .submit-form {
+    float: left;
+  }
+}
 .send-info {
-  float: left;
-  margin-top: 28px;
-  margin-left: 15px;
+  margin-top: 20px;
   color: #7f7f7f;
   font-weight: 200;
+  text-align: center;
+}
+@media all and (min-width: 30em) {
+  .send-info {
+    float: left;
+    margin-left: 15px;
+    margin-top: 28px;
+  }
 }
 .footer {
   background: #2c3e50;

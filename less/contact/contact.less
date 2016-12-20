@@ -148,39 +148,57 @@ a {
   height: 340px;
 }
 .contact-us {
-  padding: 45px 0 51px 0;
+  padding: 20px 0 15px 0;
+  @media @small-screens-min {
+    padding: 45px 0 51px 0;
+  }
 }
 .contact-title {
   text-align: center;
   color: @dark-blue;
-  font-size: 35px;
+  font-size: 28px;
   font-weight: 800;
+  @media @small-screens-min {
+    font-size: 35px;
+  }
 }
 .contact-description {
   text-align: center;
   color: @gray;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 16px;
+  @media @small-screens-min {
+    font-size: 20px;
+  }
+
 }
-.submit_form {
+.submit-form {
+  display: block;
+  width: 137px;
+  margin-left: auto;
+  margin-right: auto;
   background: @cta-blue;
   color: @white;
   font-weight: 600;
-  float: left;
   .border-radius(@default-radius);
-  padding-left: 36px;
-  padding-right: 36px;
   &:hover, &:focus, &:active {
     background: lighten(@cta-blue, 15%);
     color: @white;
   }
+  @media @small-screens-min {
+    float: left;
+  }
 }
 .send-info {
-  float: left;
-  margin-top: 28px;
-  margin-left: 15px;
+  margin-top: 20px;
   color: @gray;
   font-weight: 200;
+  text-align: center;
+  @media @small-screens-min {
+    float: left;
+    margin-left: 15px;
+    margin-top: 28px;
+  }
 }
 .footer {
   background: @dark-blue;
@@ -190,7 +208,7 @@ a {
   color: @light-blue;
   text-align: center;
   margin-bottom: 10px;
-  @media @small-screens-min{
+  @media @small-screens-min {
     float: left;
     margin-bottom: 0;
   }
@@ -198,7 +216,7 @@ a {
 .extra-info {
   color: @light-blue;
   text-align: center;
-  @media @small-screens-min{
+  @media @small-screens-min {
     float: right;
   }
 }
