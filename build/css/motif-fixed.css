@@ -3522,28 +3522,42 @@ a {
 }
 .header-wrapper {
   background: #2c3e50;
-  height: 54px;
 }
 .site-title {
-  float: left;
   color: #57718a;
   margin: 15px 0 0 0;
+  text-align: center;
+}
+@media all {
+  .site-title {
+    float: left;
+  }
 }
 .support {
-  float: right;
   margin: 12px 0 0 0;
 }
+@media all {
+  .support {
+    float: right;
+  }
+}
 .support__description {
-  float: left;
   color: #57718a;
   margin: 3px 0 0 0;
+  text-align: center;
+}
+@media all {
+  .support__description {
+    float: left;
+  }
 }
 .support__cta {
+  display: block;
+  width: 107px;
   background: #2ecc71;
   color: #ffffff;
   border: none;
-  float: right;
-  margin: 0 0 0 15px;
+  margin: 12px auto 14px;
   padding: 6px 20px;
   font-weight: bold;
   -webkit-border-radius: 0.1875rem;
@@ -3556,6 +3570,12 @@ a {
 .support__cta:focus {
   background: #69dd9a;
   color: #ffffff;
+}
+@media all {
+  .support__cta {
+    float: right;
+    margin: 0 0 13px 15px;
+  }
 }
 .main-nav {
   background: #34495e;

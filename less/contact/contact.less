@@ -59,27 +59,38 @@ a {
 //Page styles
 .header-wrapper {
   background: @dark-blue;
-  height: 54px;
 }
 .site-title {
-  float: left;
   color: @light-blue;
   margin: 15px 0 0 0;
+  text-align: center;
+
+  @media @small-screens-min {
+    float: left;
+  }
 }
 .support {
-  float: right;
   margin: 12px 0 0 0;
+
+  @media @small-screens-min {
+    float: right;
+  }
+
   &__description {
-    float: left;
     color: @light-blue;
     margin: 3px 0 0 0;
+    text-align: center;
+    @media @small-screens-min {
+      float: left;
+    }
   }
   &__cta {
+    display: block;
+    width: 107px;
     background: @green;
     color: @white;
     border: none;
-    float: right;
-    margin: 0 0 0 15px;
+    margin: 12px auto 14px;
     padding: 6px 20px;
     font-weight: bold;
     .border-radius(@default-radius);
@@ -87,6 +98,12 @@ a {
       background: @light-green;
       color: @white;
     }
+
+    @media @small-screens-min {
+      float: right;
+      margin: 0 0 13px 15px;
+    }
+
   }
 }
 .main-nav {
