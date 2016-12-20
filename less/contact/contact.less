@@ -1,59 +1,46 @@
 //Fonts Defenition
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
-
 @lato: "Lato", @stack-sans-serif;
 .lato-light, .lato-regular, .lato-bold, .lato-black {
   font-family: @lato;
 }
-
 .lato-light {
   font-weight: 300;
 }
-
 .lato-regular {
   font-weight: 400;
 }
-
 .lato-bold {
   font-weight: 700;
 }
-
 .lato-black {
   font-weight: 900;
 }
-
 h1, h2, h3, h4, h5, h6,
 .primary-heading {
   &:extend( .lato-bold );
 }
-
 h1, h2, h3, h4, h5, h6,
 .primary-heading, .secondary-heading {
   color: @primary-header-color;
 }
-
 .secondary-heading {
   &:extend( .lato-light );
 }
-
 .tertiary-heading {
   &:extend( .lato-black );
   color: @grey;
   text-transform: uppercase;
 }
-
 body, a, button, .body-text {
   &:extend( .lato-regular );
 }
-
 dt, th, .input-label, strong {
   font-weight: 700;
 }
-
 a {
   text-decoration: none;
 }
-
 //Common overriding
 .input-label {
   color: @dark-gray;
@@ -69,19 +56,16 @@ a {
     }
   }
 }
-
 //Page styles
 .header-wrapper {
   background: @dark-blue;
   height: 54px;
 }
-
 .site-title {
   float: left;
   color: @light-blue;
   margin: 15px 0 0 0;
 }
-
 .support {
   float: right;
   margin: 12px 0 0 0;
@@ -105,12 +89,10 @@ a {
     }
   }
 }
-
 .main-nav {
   background: @blue;
   height: 75px;
 }
-
 .nav-links {
   float: left;
   list-style-type: none;
@@ -131,7 +113,6 @@ a {
     }
   }
 }
-
 .login {
   float: right;
   .border-radius(@default-radius);
@@ -146,30 +127,25 @@ a {
     color: @white;
   }
 }
-
 .google-maps {
   height: 340px;
 }
-
 .contact-us {
   padding: 45px 0 0 0;
   height: 574px;
 }
-
 .contact-title {
   text-align: center;
   color: @dark-blue;
   font-size: 35px;
   font-weight: 800;
 }
-
 .contact-description {
   text-align: center;
   color: @gray;
   font-weight: 200;
   font-size: 20px;
 }
-
 .submit_form {
   background: @cta-blue;
   color: @white;
@@ -183,7 +159,6 @@ a {
     color: @white;
   }
 }
-
 .send-info {
   float: left;
   margin-top: 28px;
@@ -191,18 +166,15 @@ a {
   color: @gray;
   font-weight: 200;
 }
-
 .footer {
   background: @dark-blue;
   height: 50px;
   padding: 13px 0 0 0;
 }
-
 .copyright {
   color: @light-blue;
   float: left;
 }
-
 .extra-info {
   color: @light-blue;
   float: right;

@@ -1,106 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motif Learning Web Site</title>
-    <link rel="stylesheet" href="build/css/motif.css">
-    <script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Motif Learning Web Site</title>
+	<link rel="stylesheet" href="build/css/motif.css">
+	<script>
+			function initMap() {
+				var myLatLng = { lat: 32.773095, lng: -96.790237 };
 
-        function initMap() {
-            var myLatLng = {lat: 32.773095, lng: -96.790237};
+				var map = new google.maps.Map( document.getElementById( 'google-map' ), {
+					zoom: 8,
+					center: myLatLng
+				} );
 
-            var map = new google.maps.Map(document.getElementById('google-map'), {
-                zoom: 8,
-                center: myLatLng
-            });
-
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'Hello World!'
-            });
-        }
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBg51aZ0IIgsdXSw35gOOGsqFhIOjoRnw&callback=initMap"
-            async defer></script>
-    <script src="build/js/motif.js"></script>
+				var marker = new google.maps.Marker( {
+					position: myLatLng,
+					map: map,
+					title: 'Hello World!'
+				} );
+			}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBg51aZ0IIgsdXSw35gOOGsqFhIOjoRnw&callback=initMap"
+	        async defer></script>
+	<script src="build/js/motif.js"></script>
 </head>
 <body>
 <div class="header-wrapper">
-    <div class="wrapper">
-        <div class="gs-row gm-row gl-row">
-            <header class="gcs-full gcm-full gcl-full">
-                <div class="site-title">Simple Web Page</div>
-                <div class="support">
-                    <div class="support__description">Do you have a question?</div>
-                    <a class="btn support__cta" href="#">Contact us</a>
-                </div>
-            </header>
-        </div>
-    </div>
+	<div class="wrapper">
+		<div class="gs-row gm-row gl-row">
+			<header class="gcs-full gcm-full gcl-full">
+				<div class="site-title">Simple Web Page</div>
+				<div class="support">
+					<div class="support__description">Do you have a question?</div>
+					<a class="btn support__cta" href="#">Contact us</a>
+				</div>
+			</header>
+		</div>
+	</div>
 </div>
 <nav class="main-nav">
-    <div class="wrapper group">
-        <ul class="nav-links">
-            <li class="nav-links__item"><a class="btn" href="#">About us</a></li>
-            <li class="nav-links__item"><a class="btn" href="#">Gallery</a></li>
-            <li class="nav-links__item"><a class="btn" href="#">Portfolio</a></li>
-            <li class="nav-links__item"><a class="btn" href="#">Services</a></li>
-            <li class="nav-links__item"><a class="btn" href="#">Company</a></li>
-        </ul>
-        <div class="btn login">Login</div>
-    </div>
+	<div class="wrapper group">
+		<ul class="nav-links">
+			<li class="nav-links__item"><a class="btn" href="#">About us</a></li>
+			<li class="nav-links__item"><a class="btn" href="#">Gallery</a></li>
+			<li class="nav-links__item"><a class="btn" href="#">Portfolio</a></li>
+			<li class="nav-links__item"><a class="btn" href="#">Services</a></li>
+			<li class="nav-links__item"><a class="btn" href="#">Company</a></li>
+		</ul>
+		<div class="btn login">Login</div>
+	</div>
 </nav>
 <section class="main-content">
-    <div class="google-maps" id="google-map">
-
-    </div>
-    <div class="wrapper">
-        <div class="contact-us">
-            <div class="contact-title">Contact us!</div>
-            <div class="contact-description">write us something funny, we want to laugh...</div>
-            <div class="gm-row gl-row">
-                <div class="gcm-half gcl-half">
-                    <label class="input-label">
-                        Your Name*
-                        <input type="text" name="text">
-                    </label>
-                    <label class="input-label">
-                        Your Email*
-                        <input type="text" name="text">
-                    </label>
-                </div>
-                <div class="gcm-half gcl-half">
-                    <label class="input-label">
-                        Your Last Name*
-                        <input type="text" name="text">
-                    </label>
-                    <label class="input-label">
-                        Your Phone*
-                        <input type="text" name="text">
-                    </label>
-                </div>
-                <div class="gcl-full">
-                    <label class="input-label">
-                        Your Message*
-                        <textarea></textarea>
-                    </label>
-                </div>
-                <div class="gcm-full gcl-full">
-                    <a class="btn submit_form" href="#">Send form</a>
-                    <div class="send-info">inputs with * must be filled</div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="google-maps" id="google-map">
+	</div>
+	<div class="wrapper">
+		<div class="contact-us">
+			<div class="contact-title">Contact us!</div>
+			<div class="contact-description">write us something funny, we want to laugh...</div>
+			<div class="gm-row gl-row">
+				<div class="gcm-half gcl-half">
+					<label class="input-label">
+						Your Name*
+						<input type="text" name="text">
+					</label>
+					<label class="input-label">
+						Your Email*
+						<input type="text" name="text">
+					</label>
+				</div>
+				<div class="gcm-half gcl-half">
+					<label class="input-label">
+						Your Last Name*
+						<input type="text" name="text">
+					</label>
+					<label class="input-label">
+						Your Phone*
+						<input type="text" name="text">
+					</label>
+				</div>
+				<div class="gcl-full">
+					<label class="input-label">
+						Your Message*
+						<textarea></textarea>
+					</label>
+				</div>
+				<div class="gcm-full gcl-full">
+					<a class="btn submit_form" href="#">Send form</a>
+					<div class="send-info">inputs with * must be filled</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <footer class="footer">
-    <div class="wrapper group">
-        <div class="copyright">Simple Web Page/ All right reserved</div>
-        <div class="extra-info">Cool free templates</div>
-    </div>
+	<div class="wrapper group">
+		<div class="copyright">Simple Web Page/ All right reserved</div>
+		<div class="extra-info">Cool free templates</div>
+	</div>
 </footer>
 </body>
 </html>
