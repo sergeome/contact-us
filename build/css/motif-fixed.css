@@ -3597,24 +3597,26 @@ a {
 }
 .nav-links {
   display: none;
+  position: absolute;
+  z-index: 1;
   margin: 0;
   padding: 0;
+  width: 0;
+  top: 77px;
+  background: #34495e;
+  left: 0;
   list-style-type: none;
 }
 .nav-links--expanded {
   display: block;
-  float: left;
-  position: absolute;
-  z-index: 1;
-  top: 77px;
-  background: #34495e;
-  width: 30%;
-  left: 0;
+  width: 100%;
 }
 @media all {
   .nav-links {
+    position: static;
     display: block;
     float: left;
+    width: auto;
   }
 }
 @media all {
@@ -3659,14 +3661,20 @@ a {
   font-weight: 200;
   text-transform: uppercase;
   color: #ffffff;
-  padding-left: 44px;
-  padding-right: 44px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 .login:hover,
 .login:focus,
 .login:active {
   background: #55a5d9;
   color: #ffffff;
+}
+@media all {
+  .login {
+    padding-left: 44px;
+    padding-right: 44px;
+  }
 }
 .google-maps {
   height: 340px;

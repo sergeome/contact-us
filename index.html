@@ -50,12 +50,31 @@
 	</script>
 	<script>
 		$(document).ready(function () {
-			var winHeight = $(window).height();
+			var navLinks = $('.nav-links');
+
+			var docHeight = $(document).height();
+			var headerHeight = $('.header-wrapper').height();
+			var navHeight = $('.main-nav').height();
+			var mobileMenuHeight = docHeight - navHeight - headerHeight;
 
 			//Add click listener
 			$('.hamburger').on('click', function () {
-				$('.nav-links').toggleClass('nav-links--expanded');
-				$('.hamburger-open').addClass('hide');
+				if ($(navLinks).hasClass('nav-links--expanded')) {
+					$(navLinks).animate({
+						width: "0"
+					}, 300, function () {
+						$(this).removeClass('nav-links--expanded');
+						$(this).removeAttr('style');
+					});
+				} else {
+					$(navLinks).css('height', mobileMenuHeight);
+					$(navLinks).css('display', 'block');
+					$(navLinks).animate({
+						width: "100%"
+					}, 300, function () {
+						$(this).addClass('nav-links--expanded');
+					});
+				}
 			})
 		});
 	</script>
