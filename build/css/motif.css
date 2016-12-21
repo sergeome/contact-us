@@ -1509,7 +1509,7 @@ with size classes, much like the type modules.
 [class*="btn"] {
   width: auto;
   height: auto;
-  margin: 0;
+  margin: 20px 0;
   line-height: normal;
   text-decoration: none;
   position: relative;
@@ -1526,7 +1526,6 @@ with size classes, much like the type modules.
   color: #262626;
   text-align: center;
   padding: 0.625rem 1.125rem;
-  margin-top: 1.4285714285714286em;
 }
 p > .btn,
 p > [class*="btn"] {
@@ -3422,6 +3421,9 @@ hardcode some of those styles
 .wysiwyg h6 {
   margin-top: 1.5em;
 }
+.hide {
+  display: none;
+}
 .lato-light,
 .lato-regular,
 .lato-bold,
@@ -3579,22 +3581,53 @@ a {
 }
 .main-nav {
   background: #34495e;
-  height: 75px;
+  position: relative;
+}
+.hamburger {
+  fill: white;
+  width: 25px;
+  height: 25px;
+  margin-top: 26px;
+  cursor: pointer;
+}
+@media all and (min-width: 48em) {
+  .hamburger {
+    display: none;
+  }
 }
 .nav-links {
-  float: left;
-  list-style-type: none;
+  display: none;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
-.nav-links__item {
+.nav-links--expanded {
+  display: block;
   float: left;
+  position: absolute;
+  z-index: 1;
+  top: 77px;
+  background: #34495e;
+  width: 30%;
+  left: 0;
+}
+@media all and (min-width: 48em) {
+  .nav-links {
+    display: block;
+    float: left;
+  }
+}
+@media all and (min-width: 48em) {
+  .nav-links__item {
+    float: left;
+  }
 }
 .nav-links__item a {
+  display: block;
   background: #34495e;
   text-transform: uppercase;
   color: #ffffff;
-  padding: 10px 35px;
+  padding: 10px 15px;
   font-weight: 200;
   -webkit-border-radius: 0.1875rem;
   -moz-border-radius: 0.1875rem;
@@ -3605,6 +3638,16 @@ a {
 .nav-links__item a:focus,
 .nav-links__item a:active {
   background: #57718a;
+}
+@media all and (min-width: 48em) {
+  .nav-links__item a {
+    padding: 10px 15px;
+  }
+}
+@media all and (min-width: 62em) {
+  .nav-links__item a {
+    padding: 10px 35px;
+  }
 }
 .login {
   float: right;

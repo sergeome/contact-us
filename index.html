@@ -6,24 +6,59 @@
 	<title>Motif Learning Web Site</title>
 	<link rel="stylesheet" href="build/css/motif.css">
 	<script>
-			function initMap() {
-				var myLatLng = { lat: 32.773095, lng: -96.790237 };
+		function initMap() {
+			var myLatLng = {lat: 32.773095, lng: -96.790237};
 
-				var map = new google.maps.Map( document.getElementById( 'google-map' ), {
-					zoom: 8,
-					center: myLatLng
-				} );
+			var map = new google.maps.Map(document.getElementById('google-map'), {
+				zoom: 8,
+				center: myLatLng
+			});
 
-				var marker = new google.maps.Marker( {
-					position: myLatLng,
-					map: map,
-					title: 'Hello World!'
-				} );
-			}
+			var marker = new google.maps.Marker({
+				position: myLatLng,
+				map: map,
+				title: 'Hello World!'
+			});
+		}
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBg51aZ0IIgsdXSw35gOOGsqFhIOjoRnw&callback=initMap"
 	        async defer></script>
 	<script src="build/js/motif.js"></script>
+	<script>
+		// loads the svg sprite onto the page via ajax for caching purposes
+		(function (window) {
+			var $ = window.jQuery;
+			var self = {};
+
+			function insertSprite(data) {
+				var svgString = $(data).find('svg')[0].outerHTML;
+				$('body').prepend(svgString)
+			}
+
+			self.init = function () {
+				$.ajax({
+					method: 'get',
+					url: 'dist/icons/icons-sprite.svg',
+					success: insertSprite
+				})
+			};
+
+			$(document).ready(function () {
+				self.init()
+			})
+		}(window))
+	</script>
+	<script>
+		$(document).ready(function () {
+			var winHeight = $(window).height();
+
+			//Add click listener
+			$('.hamburger').on('click', function () {
+				$('.nav-links').toggleClass('nav-links--expanded');
+				$('.hamburger-open').addClass('hide');
+			})
+		});
+	</script>
 </head>
 <body>
 <div class="header-wrapper">
@@ -40,7 +75,11 @@
 	</div>
 </div>
 <nav class="main-nav">
-	<div class="wrapper group">
+	<div class="wrapper group nav-wrapper">
+		<svg class="hamburger">
+			<use class="hamburger-open" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#rows"></use>
+			<use class="hamburger-close hide" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delete"></use>
+		</svg>
 		<ul class="nav-links">
 			<li class="nav-links__item"><a class="btn" href="#">About us</a></li>
 			<li class="nav-links__item"><a class="btn" href="#">Gallery</a></li>
