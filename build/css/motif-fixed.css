@@ -3609,7 +3609,6 @@ a {
 }
 .nav-links--expanded {
   display: block;
-  width: 100%;
 }
 @media all {
   .nav-links {
