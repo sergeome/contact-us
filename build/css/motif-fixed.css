@@ -3912,10 +3912,6 @@ a {
     margin: 2cm;
   }
 }
-/**
- * Prototype Styles
- * REMOVE WHEN BEGINNING PRODUCTION
- */
 html,
 body {
   min-width: 62rem;

@@ -5,94 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Motif Learning Web Site</title>
 	<link rel="stylesheet" href="build/css/motif.css">
-	<script>
-		function initMap() {
-			var myLatLng = {lat: 32.773095, lng: -96.790237};
-
-			var map = new google.maps.Map(document.getElementById('google-map'), {
-				zoom: 8,
-				center: myLatLng
-			});
-
-			var marker = new google.maps.Marker({
-				position: myLatLng,
-				map: map,
-				title: 'Hello World!'
-			});
-		}
-	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBg51aZ0IIgsdXSw35gOOGsqFhIOjoRnw&callback=initMap"
-	        async defer></script>
 	<script src="build/js/motif.js"></script>
-	<script>
-		// loads the svg sprite onto the page via ajax for caching purposes
-		(function (window) {
-			var $ = window.jQuery;
-			var self = {};
-
-			function insertSprite(data) {
-				var svgString = $(data).find('svg')[0].outerHTML;
-				$('body').prepend(svgString)
-			}
-
-			self.init = function () {
-				$.ajax({
-					method: 'get',
-					url: 'dist/icons/icons-sprite.svg',
-					success: insertSprite
-				})
-			};
-
-			$(document).ready(function () {
-				self.init()
-			})
-		}(window))
-	</script>
-	<script>
-		$(document).ready(function () {
-			var navLinks = $('.nav-links');
-
-			// Calculate mobile menu height
-			var docHeight = $(document).height();
-			var headerHeight = $('.header-wrapper').height();
-			var navHeight = $('.main-nav').height();
-			var mobileMenuHeight = docHeight - navHeight - headerHeight;
-
-			//Add click listener
-			$('.hamburger').on('click', function () {
-				//Getting window width
-				var windowWidth = $(window).width();
-
-				// If menu is already opened then remove class and animate to width 0
-				if ($(navLinks).hasClass('nav-links--expanded')) {
-					$(navLinks).animate({
-						width: "0"
-					}, 300, function () {
-						$(this).removeClass('nav-links--expanded');
-						$(this).removeAttr('style');
-					});
-				} else {
-					//If menu isn't opened then opened it
-					$(navLinks).css('height', mobileMenuHeight); //specify Mobile menu height
-					$(navLinks).css('display', 'block'); // Show menu
-					// If it mobile screen open menu in full width
-					if (windowWidth < 480) {
-						$(navLinks).animate({
-							width: "100%"
-						}, 300, function () {
-							$(this).addClass('nav-links--expanded');
-						});
-					} else { // If it tablet screen open menu in 30% of full width
-						$(navLinks).animate({
-							width: "30%"
-						}, 300, function () {
-							$(this).addClass('nav-links--expanded');
-						});
-					}
-				}
-			})
-		});
-	</script>
 </head>
 <body>
 <div class="header-wrapper">
@@ -125,7 +38,7 @@
 	</div>
 </nav>
 <section class="main-content">
-	<div class="google-maps" id="google-map">
+	<div class="google-maps">
 	</div>
 	<div class="wrapper group">
 		<!--TODO should be column below placed in the row?-->
