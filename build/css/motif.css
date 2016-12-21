@@ -3421,9 +3421,6 @@ hardcode some of those styles
 .wysiwyg h6 {
   margin-top: 1.5em;
 }
-.hide {
-  display: none;
-}
 .lato-light,
 .lato-regular,
 .lato-bold,
@@ -3594,6 +3591,9 @@ a {
   .hamburger {
     display: none;
   }
+}
+.hamburger__close {
+  display: none;
 }
 .nav-links {
   display: none;
@@ -3768,6 +3768,12 @@ a {
   .extra-info {
     float: right;
   }
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
 }
 /**
  * Responsive Breakpoints

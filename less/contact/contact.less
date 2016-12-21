@@ -1,8 +1,3 @@
-//Helper classes
-
-.hide {
-  display: none;
-}
 //Fonts Defenition
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 @lato: "Lato", @stack-sans-serif;
@@ -120,6 +115,9 @@ a {
   margin-top: 26px;
   cursor: pointer;
   @media @medium-screens-min {
+    display: none;
+  }
+  &__close{
     display: none;
   }
 }
@@ -259,4 +257,14 @@ a {
   @media @small-screens-min {
     float: right;
   }
+}
+
+//TODO - are there some embedded helper classes?
+//Helper classes
+
+.hide {
+  display: none;
+}
+.show{
+  display: block;
 }

@@ -88,6 +88,9 @@
 		$(document).ready(function () {
 			var navLinks = $('.nav-links');
 
+			var mobileMenuOpen = $('.hamburger__open');
+			var mobileMenuClose = $('.hamburger__close');
+
 			// Calculate mobile menu height
 			var docHeight = $(document).height();
 			var headerHeight = $('.header-wrapper').height();
@@ -104,6 +107,9 @@
 					$(navLinks).animate({
 						width: "0"
 					}, 300, function () {
+						//TODO - refactor with CSS Classes
+						mobileMenuClose.hide();
+						mobileMenuOpen.show();
 						$(this).removeClass('nav-links--expanded');
 						$(this).removeAttr('style');
 					});
@@ -117,12 +123,16 @@
 							width: "100%"
 						}, 300, function () {
 							$(this).addClass('nav-links--expanded');
+							mobileMenuOpen.hide();
+							mobileMenuClose.show();
 						});
 					} else { // If it tablet screen open menu in 30% of full width
 						$(navLinks).animate({
 							width: "30%"
 						}, 300, function () {
 							$(this).addClass('nav-links--expanded');
+							mobileMenuOpen.hide();
+							mobileMenuClose.show();
 						});
 					}
 				}
