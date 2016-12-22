@@ -44,7 +44,7 @@
 	};
 
 	App.prototype.initGoogleMaps = function () {
-
+		//Script initializes Google Maps using API Key
 		var googleMapsLibURL = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBBg51aZ0IIgsdXSw35gOOGsqFhIOjoRnw';
 
 		$.getScript(googleMapsLibURL, function(){
@@ -62,7 +62,7 @@
 	};
 
 	App.prototype.loadSVGSprite = function () {
-
+		//Script loads SVG from separate directory
 		var self = {};
 
 		function insertSprite(data) {

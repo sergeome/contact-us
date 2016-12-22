@@ -9390,6 +9390,7 @@ var Holder = Holder || {};
         $("[data-validation='true']").plugin("gauntlet");
     };
     App.prototype.initGoogleMaps = function() {
+        //Script initializes Google Maps using API Key
         var googleMapsLibURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBBg51aZ0IIgsdXSw35gOOGsqFhIOjoRnw";
         $.getScript(googleMapsLibURL, function() {
             var myLatLng = {
@@ -9408,6 +9409,7 @@ var Holder = Holder || {};
         });
     };
     App.prototype.loadSVGSprite = function() {
+        //Script loads SVG from separate directory
         var self = {};
         function insertSprite(data) {
             var svgString = $(data).find("svg")[0].outerHTML;
