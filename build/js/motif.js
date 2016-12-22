@@ -9362,6 +9362,8 @@ var Holder = Holder || {};
     };
     App.prototype.initUI = function() {
         //TODO - fix error for plugin below
+        //This function throws an error in the console and
+        //prevent execution of other functions
         // $(".js-tabs").plugin("tabs", {
         // 	"cssTransition": Modernizr.csstransitions
         // });
@@ -9431,49 +9433,57 @@ var Holder = Holder || {};
             var navLinks = $(".nav-links");
             var mobileMenuOpen = $(".hamburger__open");
             var mobileMenuClose = $(".hamburger__close");
+            // Get SVG classes. JQuery v. <3 can't apply addClass
+            // to SVG. Only solutions that works with SVG is
+            // attr('class', 'value')
+            function mobileMenuOpened(self) {
+                $(self).addClass("nav-links--expanded");
+                mobileMenuOpen.attr("class", " hamburger__open hide");
+                mobileMenuClose.attr("class", "hamburger__close show");
+            }
+            function mobileMenuClosed(self) {
+                mobileMenuClose.attr("class", "hamburger__close hide");
+                mobileMenuOpen.attr("class", "hamburger__open show");
+                $(self).removeClass("nav-links--expanded");
+                $(self).removeAttr("style");
+            }
             // Calculate mobile menu height
             var docHeight = $(document).height();
             var headerHeight = $(".header-wrapper").height();
             var navHeight = $(".main-nav").height();
             var mobileMenuHeight = docHeight - navHeight - headerHeight;
-            //Add click listener
+            // Approach used in this code:
+            // First animate elements with inline styles.
+            // When animation is finished remove inline styles and
+            // apply css classes.
             $(".hamburger").on("click", function() {
-                //Getting window width
                 var windowWidth = $(window).width();
                 // If menu is already opened then remove class and animate to width 0
-                if ($(navLinks).hasClass("nav-links--expanded")) {
-                    $(navLinks).animate({
+                if (navLinks.hasClass("nav-links--expanded")) {
+                    navLinks.animate({
                         width: "0"
                     }, 300, function() {
-                        //TODO - refactor with CSS Classes
-                        mobileMenuClose.hide();
-                        mobileMenuOpen.show();
-                        $(this).removeClass("nav-links--expanded");
-                        $(this).removeAttr("style");
+                        mobileMenuClosed(this);
                     });
                 } else {
                     //If menu isn't opened then opened it
-                    $(navLinks).css("height", mobileMenuHeight);
+                    navLinks.css("height", mobileMenuHeight);
                     //specify Mobile menu height
-                    $(navLinks).css("display", "block");
+                    navLinks.css("display", "block");
                     // Show menu
                     // If it mobile screen open menu in full width
                     if (windowWidth < 480) {
-                        $(navLinks).animate({
+                        navLinks.animate({
                             width: "100%"
                         }, 300, function() {
-                            $(this).addClass("nav-links--expanded");
-                            mobileMenuOpen.hide();
-                            mobileMenuClose.show();
+                            mobileMenuOpened(this);
                         });
                     } else {
                         // If it tablet screen open menu in 30% of full width
-                        $(navLinks).animate({
+                        navLinks.animate({
                             width: "30%"
                         }, 300, function() {
-                            $(this).addClass("nav-links--expanded");
-                            mobileMenuOpen.hide();
-                            mobileMenuClose.show();
+                            mobileMenuOpened(this);
                         });
                     }
                 }
